@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<conio.h>
+#include<graphics.h>
+void main()
+{
+float dx,dy;
+int gd=DETECT,gm, x1,x2,y1,y2,x,y,pixel,i=1,a;
+initgraph(&gd,&gm,"C:\\Turboc3\\BGI");
+clrscr();
+x1=20;
+x2=100;
+y1=20;
+y2=100;
+dx=x2-x1;
+dy=y2-y1;
+if(dx>=dy)
+{
+pixel=dx;
+}
+else
+{
+pixel=dy;
+}
+dx=dx/pixel;
+dy=dy/pixel;
+x=x1+0.5;
+y=y1+0.5;
+while(i<=pixel)
+{
+putpixel(x,y,RED);
+x=x+dx;
+y=y+dy;
+i++;
+}
+getch();
+}
