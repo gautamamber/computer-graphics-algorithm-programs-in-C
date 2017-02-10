@@ -1,0 +1,37 @@
+#include<stdio.h>
+#include<conio.h>
+#include<graphics.h>
+void main()
+{
+int gd=DETECT,gm;
+int x,y,r,h,xc=100,yc=100;;
+initgraph(&gd,&gm,"C:\\Turboc3\\BGI");
+r=50;
+x=0;
+y=r;
+h=1-r;
+while(y>x)
+{
+if(h<0)
+{
+h=h+2*x+3 ;
+x=x+1;
+y=y;
+}
+else
+{
+h=h+2*(x-y)+5;
+y=y-1;
+x=x+1;
+}
+putpixel(xc+x,yc+y,5);
+putpixel(xc+y,yc+x,5);
+putpixel(xc-y,yc+x,5);
+putpixel(xc-x,yc+y,5);
+putpixel(xc-x,yc-y,5);
+putpixel(xc-y,yc-x,5);
+putpixel(xc+y,yc-x,5);
+putpixel(xc+x,yc-y,5);
+}
+getch();
+}
